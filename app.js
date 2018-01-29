@@ -18,7 +18,7 @@ const express = require("express"),
 	casual = require("casual");
 
 require("dotenv").config({ path: "variables.env" });
-console.log('TEST');
+
 
 var promise = mongoose.connect(process.env.DATABASE, {
 	useMongoClient: true
