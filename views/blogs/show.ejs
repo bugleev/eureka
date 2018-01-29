@@ -1,0 +1,102 @@
+<% include ../partials/header %>
+
+  <div class="ui centered grid container">
+    <div class="column">
+      <div class="ui text shape row" id="post_header">
+        <div class="sides">
+          <h1 class="ui header centered side active">
+            You are reading:
+          </h1>
+          <h1 class="ui header centered side" id="title_text">
+            <a href="/blog/<%=user.blog_slug%>">"
+              <%=user.blog_name%> "</a>
+          </h1>
+        </div>
+      </div>
+      <img src="<%=blog.image%>" class="ui rounded fluid image" id="post_image">
+      <h2 class="ui centered header">
+        <%=blog.title%>
+      </h2>
+      <div class="" style="text-align: right;">
+        by:
+        <h4 class="ui compact mini message">
+          <%=blog.author.username%>
+        </h4>
+      </div>
+      <div class="ui horizontal clearing divider">
+        <% let postDate = moment(blog.created).format('LL');%>
+          <h5 class="ui header">
+            Posted on:
+            <%= postDate %>
+          </h5>
+      </div>
+      <div class="ui container justified">
+        <%-blog.body%>
+      </div>
+      <% if(currentUser && blog.author.id.equals(currentUser._id)) { %>
+        <a href="/posts/<%=blog._id%>/edit" class="ui left floated orange mini button">Edit post</a>
+        <% } %>
+    </div>
+  </div>
+  <div class="ui container grid">
+    <div class="ui minimal comments sixteen wide column">
+      <h3 class="ui dividing header">Comments</h3>
+      <% blog.comments.forEach((comment) => { %>
+        <div class="comment">
+          <a class="avatar">
+            <img src="https://www.w3schools.com/w3images/avatar2.png">
+          </a>
+          <div class="content">
+            <a class="author">
+              <%=comment.author.username %>
+            </a>
+            <div class="metadata">
+              <% let commentDate = moment(comment.created).fromNow(); %>
+                <span class="date">
+                  <%=commentDate; %>
+                </span>
+            </div>
+            <div class="text">
+              <%=comment.text %>
+            </div>
+            <% if(currentUser && comment.author.id.equals(currentUser._id)) { %>
+              <div class="actions">
+                <form action="/posts/<%=blog._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+                  <a href="/posts/<%=blog._id%>/comments/<%=comment._id%>/edit" class="reply">Edit</a>
+                  <button data-id="" class="reply submit-custom">Delete</button>
+                </form>
+              </div>
+              <% } %>
+          </div>
+        </div>
+        <% }); %>
+          <a href="/posts/<%=blog._id%>/comments/new" class="ui green submit labeled icon mini button">
+            <i class="icon edit"></i> Add Comment
+          </a>
+    </div>
+
+
+  </div>
+  <script>
+    setInterval(function () {
+      $(".shape").shape('flip up');
+    }, 2500);
+    $(".ui.container").ready(() => {
+      $('#post_image, #post_image+h2').transition({
+        animation: 'slide down',
+        duration: 200
+      });
+      $('h4.mini.message').transition({
+        animation: 'slide left',
+        duration: 200
+      });
+      $('.clearing.divider, .clearing.divider+p, .orange.button, .minimal.comments').transition({
+        animation: 'slide up',
+        duration: 200
+      });
+    });
+
+  </script>
+
+
+  <% include ../partials/footer %>

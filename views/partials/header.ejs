@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <% if(pageTitle){ %>
+    <title> Blog:
+      <%= pageTitle %>
+    </title>
+    <% } else { %>
+      <title>The Eureka Blogs: Welcome aboard!</title>
+      <% } %>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/dist/semantic.min.css">
+        <link rel="stylesheet" href="/stylesheets/app.css">
+        <script src="//code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="/dist/semantic.min.js"></script>
+
+</head>
+
+<body>
+  <div class="ui vertical menu sidebar">
+    <% if(currentUser){ %>
+      <div class="item">
+        <h7 class="item">Logged as:&nbsp;
+          <% var userUrl = currentUser.blog_slug ? `/blog/${currentUser.blog_slug}` : ""; %>
+            <a href="<%= userUrl %>" class="" style="font-family: cursive;">
+              <%= currentUser.username %>
+            </a>
+        </h7>
+      </div>
+      <% } %>
+        <a href="/" class="item">Home</a>
+        <a href="/posts" class="item">Recent Posts</a>
+        <a href="/blogs" class="item">View Blogs</a>
+        <% if(!currentUser || !currentUser.blog_name){ %>
+          <a href="/create" class="item">Create Blog</a>
+          <% } %>
+            <% if(currentUser && currentUser.blog_name){ %>
+              <a href="/blog/<%= currentUser.blog_slug %>" class="item">My Blog</a>
+              <a href="/posts/new" class="item">New Post</a>
+              <% } %>
+                <% if(!currentUser){ %>
+                  <a href="/login" class="item">Log In</a>
+                  <a href="/register" class="item">Sign-up</a>
+                  <% } else {%>
+                    <a href="/logout" class="item hideable">Log Out</a>
+                    <% } %>
+  </div>
+  <div class="pusher">
+    <div style="background-color: rgb(239, 239, 239); height: 0.1em;"></div>
+    <div class="ui borderless main large menu">
+      <div class="ui container">
+        <a class="toc item">
+          <i class="sidebar icon"></i>
+        </a>
+        <div class="item hideable">
+          <div class="item">
+            <i class="diamond teal icon"></i>
+            <a href="/" style="color: rgba(0,0,0,.87); ">Eureka</a>
+          </div>
+        </div>
+        <% if(currentUser){ %>
+          <div class="item hideable">
+            <h7 class="item">Logged as:&nbsp;
+              <a href="<%= userUrl %>" class="" style="font-family: cursive;">
+                <%= currentUser.username %>
+              </a>
+            </h7>
+          </div>
+          <% } %>
+            <div class="ui dropdown item hideable">
+              Activity
+              <i class="dropdown icon"></i>
+              <div class="menu">
+                <a href="/" class="item hideable">Home</a>
+                <a href="/posts" class="item hideable">Recent Posts</a>
+                <a href="/blogs" class="item hideable">View Blogs</a>
+                <% if(!currentUser || !currentUser.blog_name){ %>
+                  <a href="/create" class="item hideable">Create Blog</a>
+                  <% } %>
+                    <% if(currentUser && currentUser.blog_name){ %>
+                      <a href="/blog/<%= currentUser.blog_slug %>" class="item hideable">My Blog</a>
+                      <a href="/posts/new" class="item hideable">New Post</a>
+                      <% } %>
+              </div>
+            </div>
+            <% if(!currentUser){ %>
+              <a href="/login" class="item hideable">Log In</a>
+              <div class="item hideable">
+                <a href="/register" class="ui teal button" id="sign_up_btn">Sign-up</a>
+              </div>
+              <% } else {%>
+                <a href="/logout" class="item hideable">Log Out</a>
+                <% } %>
+                  <div class="ui category transparent icon input search right item">
+                    <input class="prompt search__input" name="search" placeholder="Search posts..." type="text">
+                    <i class="search link icon"></i>
+                    <div class="search__results"></div>
+                  </div>
+      </div>
+    </div>
+    <div class="ui grid centered" id="error_div">
+      <% if(error && error.length > 0) { %>
+        <div class="ui negative tiny message fifteen wide mobile nine wide tablet six wide computer column center aligned container"
+          style="margin:1rem;">
+          <i class="close icon"></i>
+          <p>
+            <%= error %>
+          </p>
+        </div>
+        <% } %>
+          <% if(success && success.length > 0) { %>
+            <div class="ui positive tiny message fifteen wide mobile nine wide tablet six wide computer column center aligned container"
+              style="margin:1rem;">
+              <i class="close icon"></i>
+              <p>
+                <%= success %>
+              </p>
+            </div>
+            <% } %>
+    </div>
+    <script>
+      $('.message .close')
+        .on('click', function () {
+          $(this)
+            .closest('.message')
+            .transition('fade')
+            ;
+        });
+      $('.ui.dropdown').dropdown({
+        on: "hover"
+      });
+      $('#error_div').ready(() => {
+        $('.tiny.message').transition('shake');
+
+      })
+
+    </script>

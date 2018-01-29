@@ -1,0 +1,23 @@
+<% include ../partials/header %>
+    <div class="ui centered grid container-fluid">
+        <h1 class="ui header row" style="margin-top: 2rem;">Create new comment to "
+            <%=blog.title %> ":</h1>
+        <div class="fourteen wide mobile ten wide tablet seven wide computer column">
+            <div class="ui piled segment">
+                <div class="ui green ribbon label" style="margin-bottom: 1em;">
+                    <i class="write icon"></i> Comment
+                </div>
+                <form action="/posts/<%=blog._id %>/comments" method="POST" class="ui mini form">
+                    <div class="field" style="margin-bottom: 1em;">
+                        <label>Text</label>
+                        <textarea name="comment[text]" placeholder="Fill in your comment"><%=casual.words(n = 15)  %></textarea>
+                    </div>
+                    <input type="submit" class="tiny ui primary button" value="Leave a comment">
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+    <% include ../partials/footer %>

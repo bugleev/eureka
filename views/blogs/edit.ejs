@@ -1,0 +1,35 @@
+<% include ../partials/header %>
+  <script src="https://cdn.ckeditor.com/4.8.0/standard/ckeditor.js"></script>
+  <div class="ui centered grid container-fluid">
+    <h1 class="ui header row">Edit post entry:</h1>
+    <div class="fourteen wide mobile twelve wide computer column">
+      <div class="ui piled segment">
+        <div class="ui orange ribbon label" style="margin-bottom: 1em;">
+          <i class="write icon"></i> Edit Post
+        </div>
+        <form action="/posts/<%=blog._id%>?_method=PUT" method="POST" class="ui form">
+          <div class="field">
+            <label>Post Title</label>
+            <input type="text" name="blog[title]" value="<%=blog.title%>">
+          </div>
+          <div class="field">
+            <label>Image URL</label>
+            <input type="url" name="blog[image]" value="<%=blog.image%>">
+          </div>
+          <div class="field" style="margin-bottom: 1em;">
+            <label>Text</label>
+            <textarea name="blog[body]"><%=blog.body%></textarea>
+          </div>
+          <input type="submit" class="tiny ui primary button">
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+  <script>
+
+    CKEDITOR.replace('blog[body]');
+  </script>
+
+  <% include ../partials/footer %>

@@ -1,0 +1,31 @@
+<% include ../partials/header %>
+  <div class="ui centered grid container-fluid">
+    <h1 class="ui header row">Create your blog:</h1>
+    <div class="fourteen wide mobile ten wide tablet seven wide computer column">
+      <div class="ui piled segment">
+        <div class="ui teal ribbon label" style="margin-bottom: 1em;">
+          <i class="write icon"></i> Blog
+        </div>
+        <form action="/create" method="POST" class="ui form">
+          <div class="field">
+            <label>Blog Title</label>
+            <input type="text" name="user[blog_name]" placeholder="title" value="<%= casual.title %>">
+          </div>
+          <div class="field">
+            <label>Main image</label>
+            <input type="url" name="user[blog_image]" placeholder="image url">
+          </div>
+          <div class="field" style="margin-bottom: 1em;">
+            <label>Description</label>
+            <textarea name="user[blog_description]" placeholder="Describe what's your blog about..."><%= casual.description %></textarea>
+          </div>
+          <input type="submit" class="tiny ui primary button">
+        </form>
+      </div>
+    </div>
+  </div>
+  <h1 class="ui header centered">get the image:
+    <a href="https://picsum.photos/700/700/?random">CLICK</a>
+  </h1>
+
+  <% include ../partials/footer %>

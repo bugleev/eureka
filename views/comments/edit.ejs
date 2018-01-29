@@ -1,0 +1,22 @@
+<% include ../partials/header %>
+    <div class="ui centered grid container-fluid">
+        <h1 class="ui header row" style="margin-top: 2rem;">Edit a comment:</h1>
+        <div class="fourteen wide mobile ten wide tablet seven wide computer column">
+            <div class="ui piled segment">
+                <div class="ui green ribbon label" style="margin-bottom: 1em;">
+                    <i class="write icon"></i> Comment
+                </div>
+                <form action="/posts/<%=blog_id %>/comments/<%=comment._id%>?_method=PUT " method="POST" class="ui mini form">
+                    <div class="field" style="margin-bottom: 1em;">
+                        <label>Text</label>
+                        <textarea name="comment[text]"><%=comment.text%></textarea>
+                    </div>
+                    <input type="submit" class="tiny ui primary button" value="Leave a comment">
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+    <% include ../partials/footer %>

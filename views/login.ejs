@@ -1,0 +1,71 @@
+<% include ./partials/header %>
+  <style>
+    .ui.footer.segment {
+      margin: 0em 0em 0em;
+      padding: 5em 0em;
+    }
+  </style>
+  <script>
+    $(document).ready(function () {
+      $('.ui.form')
+        .form({
+          fields: {
+            email: {
+              identifier: 'username',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'Please enter your username'
+                }
+              ]
+            },
+            password: {
+              identifier: 'password',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'Please enter your password'
+                },
+                {
+                  type: 'length[6]',
+                  prompt: 'Your password must be at least 6 characters'
+                }
+              ]
+            }
+          }
+        });
+    });
+  </script>
+  <div class="ui middle aligned center aligned grid" id="login_grid">
+    <div>
+      <div class="ui teal segment">
+        <h2 class="ui teal image header">
+          <i class="mini diamond icon"></i>
+          <div class="content">
+            Log-in to your account
+          </div>
+        </h2>
+        <form action="/login" method="POST" class="ui mini form">
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="user icon"></i>
+              <input placeholder="username" name="username" type="text">
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="lock icon"></i>
+              <input placeholder="password" name="password" type="password">
+            </div>
+          </div>
+          <button class="ui fluid mini teal submit button">Log in</button>
+          <div class="ui error message"></div>
+        </form>
+        <div class="ui message">
+          New to us?
+          <a href="/register">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% include ./partials/footer %>

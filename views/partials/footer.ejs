@@ -1,0 +1,57 @@
+<div class="ui inverted vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui stackable inverted divided grid">
+            <div class="four wide column">
+                <h4 class="ui inverted header">My other projects</h4>
+                <div class="ui inverted link list">
+                    <a href="http://guitarlurk.com" class="item">Guitar and bass online catalogue</a>
+                    <a href="http://bugleev.com" class="item">Personal web-site</a>
+                    <a href="http://www.bwm-blogs.bugleev.com" class="item">Node.js Blog App</a>
+                    <a href="#" class="item">Something at github.io</a>
+                </div>
+            </div>
+            <div class="four wide column">
+                <h4 class="ui inverted header">My social media</h4>
+                <div class="ui inverted link list">
+                    <a href="https://twitter.com/abugleev" class="item">Twitter</a>
+                    <a href="https://www.facebook.com/bugleev/" class="item">Facebook</a>
+                    <a href="https://vk.com/bugleev" class="item">VK</a>
+                    <a href="https://www.linkedin.com/in/andrey-bugleev-5a0719150/" class="item">LinkedIn</a>
+                </div>
+            </div>
+
+            <div class="eight wide column">
+                <h4 class="ui inverted header">Message:</h4>
+                <p>Feel free to contact me by any social link available or visit my personal website. Have a great day!</p>
+            </div>
+        </div>
+        <div class="ui inverted section divider"></div>
+        <div class="item">
+            <i class="diamond circular icon"></i> Eureka Blogs
+        </div>
+        <div class="ui horizontal inverted small divided link list">
+            <a class="item" href="#">Site Map</a>
+            <a class="item" href="#">Contact Us</a>
+            <a class="item" href="#">Terms and Conditions</a>
+            <a class="item" href="#">Privacy Policy</a>
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+    $(document)
+        .ready(function () {
+            // fix main menu to page on passing
+            $('.main.menu').visibility({
+                type: 'fixed'
+            });
+            $('.ui.sidebar')
+                .sidebar('attach events', '.toc.item');
+        });
+</script>
+<script src="/dist/bundle.js"></script>
+<!-- <script> window.jQuery || document.write("<script src='js/vendor/jquery-1.9.1.min.js'><\/script>")</script> -->
+</body>
+
+</html>

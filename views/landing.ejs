@@ -1,0 +1,31 @@
+<% include partials/header %>
+  <style>
+    .ui.footer.segment {
+      margin: 0em 0em 0em;
+      padding: 5em 0em;
+    }
+  </style>
+  <div class="ui vertical masthead center aligned segment" id="landing_header">
+    <img class="ui centered huge circular image" src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1350&q=80">
+    <div class="ui text container">
+      <h2>Welcome to</h2>
+      <h1 class="ui header">
+        Eureka Blogs
+      </h1>
+      <a href="/blogs" class="ui button landing_btn">View blogs
+        <i class="right arrow icon"></i>
+      </a>
+      <a href="/posts" class="ui button landing_btn">View recent posts
+        <i class="right arrow icon"></i>
+      </a>
+    </div>
+
+  </div>
+  <script>
+    $(".masthead").ready(() => {
+      $('.text.container > h2').transition('swing down');
+      $('.text.container > h1').transition('swing up');
+    });
+
+  </script>
+  <% include partials/footer %>

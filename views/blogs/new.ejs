@@ -1,0 +1,37 @@
+<% include ../partials/header %>
+  <script src="https://cdn.ckeditor.com/4.8.0/standard/ckeditor.js"></script>
+  <div class="ui centered grid container-fluid">
+    <h1 class="ui header row" style="margin-top: 2rem;">Create post entry:</h1>
+    <div class="fourteen wide mobile ten wide computer column">
+      <div class="ui piled segment">
+        <div class="ui black ribbon label" style="margin-bottom: 1em;">
+          <i class="write icon"></i> New Post
+        </div>
+        <form action="/posts" method="POST" class="ui form">
+          <div class="field">
+            <label>Post Title</label>
+            <input type="text" name="blog[title]" placeholder="title" value="<%= casual.title %>">
+          </div>
+          <div class="field">
+            <label>Image URL</label>
+            <input type="url" name="blog[image]" placeholder="image">
+          </div>
+          <div class="field" style="margin-bottom: 1em;">
+            <label>Text</label>
+            <textarea name="blog[body]" placeholder="blogpost text goes here"></textarea>
+          </div>
+          <input type="submit" class="tiny ui primary button">
+        </form>
+      </div>
+    </div>
+  </div>
+  <h1 class="ui header centered">get the image:
+    <a href="https://picsum.photos/700/700/?random">CLICK</a>
+  </h1>
+  <script>
+
+    CKEDITOR.replace('blog[body]');
+  </script>
+
+  </script>
+  <% include ../partials/footer %>
