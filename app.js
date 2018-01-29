@@ -1,6 +1,8 @@
 const express = require("express"),
 	app = express(),
 	bodyParser = require("body-parser"),
+	session = require("express-session"),
+	MongoBlogs = require('connect-mongo')(session),
 	mongoose = require("mongoose"),
 	flash = require("connect-flash"),
 	passport = require("passport"),
@@ -15,9 +17,13 @@ const express = require("express"),
 
 require("dotenv").config({ path: "variables.env" });
 
-mongoose.Promise = global.Promise;
+
 var promise = mongoose.connect(process.env.DATABASE, {
 	useMongoClient: true
+});
+mongoose.Promise = global.Promise; // Tell Mongoose to use ES6 promises
+mongoose.connection.on("error", err => {
+	console.error(`${err.message}`);
 });
 
 app.set("view engine", "ejs");
@@ -30,14 +36,13 @@ app.use(flash());
 
 
 /*****************PASSPORT CONFIGURATION********************/
-app.use(
-	require("express-session")({
-		secret: process.env.SECRET,
-		key: process.env.KEY,
-		resave: false,
-		saveUninitialized: false
-	})
-);
+app.use(session({
+	secret: process.env.SECRET,
+	key: process.env.KEY,
+	resave: false,
+	saveUninitialized: false,
+	store: new MongoBlogs({ mongooseConnection: mongoose.connection })
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
