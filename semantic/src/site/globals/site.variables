@@ -1,0 +1,947 @@
+/*******************************
+     User Global Variables
+*******************************/
+/*******************************
+         Site Settings
+*******************************/
+
+/*-------------------
+       Fonts
+--------------------*/
+
+@fontname : "Lato";
+@fontsmoothing : antialiased;
+
+@headerfont : @fontName, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@pagefont : @fontName, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+
+@googlefontname : @fontName;
+@importgooglefonts : true;
+@googlefontsizes : '400, 700, 400italic, 700italic';
+@googlesubset : "latin";
+
+@googleprotocol : "https://";
+@googlefontrequest : "@{googleFontName}:@{googleFontSizes}&subset=@{googleSubset}";
+
+/*-------------------
+      Base Sizes
+--------------------*/
+
+/* This is the single variable that controls them all */
+@emsize : 14px;
+
+/* The size of page text  */
+@fontsize : 14px;
+
+/*-------------------
+    Border Radius
+--------------------*/
+
+/* See Power-user section below
+   for explanation of @px variables
+*/
+@relativeBorderRadius: @relative4px;
+@absoluteBorderRadius: @4px;
+
+@defaultBorderRadius: @absoluteBorderRadius;
+
+/*-------------------
+    Brand Colors
+--------------------*/
+
+@primarycolor : @blue;
+@secondarycolor : @black;
+
+@lightprimarycolor : @lightBlue;
+@lightsecondarycolor : @lightBlack;
+
+/*--------------
+  Page Heading
+---------------*/
+
+@headerfontweight : bold;
+@headerlineheight : unit((18 / 14), em);
+
+@h1 : unit((28 / 14), rem);
+@h2 : unit((24 / 14), rem);
+@h3 : unit((18 / 14), rem);
+@h4 : unit((15 / 14), rem);
+@h5 : unit((14 / 14), rem);
+
+/*--------------
+   Form Input
+---------------*/
+
+/* This adjusts the default form input across all elements */
+@inputbackground : @white;
+@inputverticalpadding : @relative11px;
+@inputhorizontalpadding : @relative14px;
+@inputpadding : @inputVerticalPadding @inputHorizontalPadding;
+
+/* Input Text Color */
+@inputColor: @textColor;
+@inputPlaceholderColor: lighten(@inputColor, 75);
+@inputPlaceholderFocusColor: lighten(@inputColor, 45);
+
+/* Line Height Default For Inputs in Browser (Descendors are 17px at 14px base em) */
+@inputLineHeight: unit((17 / 14), em);
+
+/*-------------------
+    Focused Input
+--------------------*/
+
+/* Used on inputs, textarea etc */
+@focusedFormBorderColor: #85b7d9;
+
+/* Used on dropdowns, other larger blocks */
+@focusedFormMutedBorderColor: #96c8da;
+
+/*-------------------
+        Sizes
+--------------------*/
+
+/*
+  Sizes are all expressed in terms of 14px/em (default em)
+  This ensures these "ratios" remain constant despite changes in EM
+*/
+
+@minisize : (11 / 14);
+@tinysize : (12 / 14);
+@smallsize : (13 / 14);
+@mediumsize : (14 / 14);
+@largesize : (16 / 14);
+@bigsize : (18 / 14);
+@hugesize : (20 / 14);
+@massivesize : (24 / 14);
+
+/*-------------------
+        Page
+--------------------*/
+
+@pagebackground : #FFFFFF;
+@pageoverflowx : hidden;
+
+@lineheight : 1.4285em;
+@textcolor : rgba(0, 0, 0, 0.87);
+
+/*-------------------
+      Paragraph
+--------------------*/
+
+@paragraphmargin : 0em 0em 1em;
+@paragraphlineheight : @lineHeight;
+
+/*-------------------
+       Links
+--------------------*/
+
+@linkcolor : #4183C4;
+@linkunderline : none;
+@linkhovercolor : darken(saturate(@linkColor, 20), 15, relative);
+@linkhoverunderline : @linkUnderline;
+
+/*-------------------
+    Scroll Bars
+--------------------*/
+
+@useCustomScrollbars: true;
+
+@customScrollbarWidth: 10px;
+
+@trackBackground: rgba(0, 0, 0, 0.1);
+@trackBorderRadius: 0px;
+
+@thumbBorderRadius: 5px;
+@thumbBackground: rgba(0, 0, 0, 0.25);
+@thumbTransition: color 0.2s ease;
+
+@thumbInactiveBackground: rgba(0, 0, 0, 0.15);
+@thumbHoverBackground: rgba(128, 135, 139, 0.8);
+
+/* Inverted */
+@trackInvertedBackground: rgba(255, 255, 255, 0.1);
+@thumbInvertedBackground: rgba(255, 255, 255, 0.25);
+@thumbInvertedInactiveBackground: rgba(255, 255, 255, 0.15);
+@thumbInvertedHoverBackground: rgba(255, 255, 255, 0.35);
+
+/*-------------------
+  Highlighted Text
+--------------------*/
+
+@highlightbackground : #CCE2FF;
+@highlightcolor : @textColor;
+
+@inputhighlightbackground : rgba(100, 100, 100, 0.4);
+@inputhighlightcolor : @textColor;
+
+/*-------------------
+       Loader
+--------------------*/
+
+@loadersize : @relativeBig;
+@loaderspeed : 0.6s;
+@loaderlinewidth : 0.2em;
+@loaderfillcolor : rgba(0, 0, 0, 0.1);
+@loaderlinecolor : @grey;
+
+@invertedloaderfillcolor : rgba(255, 255, 255, 0.15);
+@invertedloaderlinecolor : @white;
+
+/*-------------------
+        Grid
+--------------------*/
+
+@columnCount: 16;
+
+/*-------------------
+     Transitions
+--------------------*/
+
+@defaultduration : 0.1s;
+@defaulteasing : ease;
+
+/*-------------------
+     Breakpoints
+--------------------*/
+
+@mobilebreakpoint : 320px;
+@tabletbreakpoint : 768px;
+@computerbreakpoint : 992px;
+@largemonitorbreakpoint : 1200px;
+@widescreenmonitorbreakpoint : 1920px;
+
+/*-------------------
+      Site Colors
+--------------------*/
+
+/*---  Colors  ---*/
+@red : #DB2828;
+@orange : #F2711C;
+@yellow : #FBBD08;
+@olive : #B5CC18;
+@green : #21BA45;
+@teal : #00B5AD;
+@blue : #2185D0;
+@violet : #6435C9;
+@purple : #A333C8;
+@pink : #E03997;
+@brown : #A5673F;
+@grey : #767676;
+@black : #1B1C1D;
+
+/*---  Light Colors  ---*/
+@lightred : #FF695E;
+@lightorange : #FF851B;
+@lightyellow : #FFE21F;
+@lightolive : #D9E778;
+@lightgreen : #2ECC40;
+@lightteal : #6DFFFF;
+@lightblue : #54C8FF;
+@lightviolet : #A291FB;
+@lightpurple : #DC73FF;
+@lightpink : #FF8EDF;
+@lightbrown : #D67C1C;
+@lightgrey : #DCDDDE;
+@lightblack : #545454;
+
+/*---   Neutrals  ---*/
+@fullblack : #000000;
+@offwhite : #F9FAFB;
+@darkwhite : #F3F4F5;
+@midwhite : #DCDDDE;
+@white : #FFFFFF;
+
+/*--- Colored Backgrounds ---*/
+@redbackground : #FFE8E6;
+@orangebackground : #FFEDDE;
+@yellowbackground : #FFF8DB;
+@olivebackground : #FBFDEF;
+@greenbackground : #E5F9E7;
+@tealbackground : #E1F7F7;
+@bluebackground : #DFF0FF;
+@violetbackground : #EAE7FF;
+@purplebackground : #F6E7FF;
+@pinkbackground : #FFE3FB;
+@brownbackground : #F1E2D3;
+
+/*--- Colored Headers ---*/
+@redheadercolor : darken(@redTextColor, 5);
+@oliveheadercolor : darken(@oliveTextColor, 5);
+@greenheadercolor : darken(@greenTextColor, 5);
+@yellowheadercolor : darken(@yellowTextColor, 5);
+@blueheadercolor : darken(@blueTextColor, 5);
+@tealheadercolor : darken(@tealTextColor, 5);
+@pinkheadercolor : darken(@pinkTextColor, 5);
+@violetheadercolor : darken(@violetTextColor, 5);
+@purpleheadercolor : darken(@purpleTextColor, 5);
+@orangeheadercolor : darken(@orangeTextColor, 5);
+@brownheadercolor : darken(@brownTextColor, 5);
+
+/*--- Colored Text ---*/
+@redtextcolor : @red;
+@orangetextcolor : @orange;
+@yellowtextcolor : #B58105; // Yellow text is difficult to read
+@olivetextcolor : #8ABC1E; // Olive is difficult to read
+@greentextcolor : #1EBC30; // Green is difficult to read
+@tealtextcolor : #10A3A3; // Teal text is difficult to read
+@bluetextcolor : @blue;
+@violettextcolor : @violet;
+@purpletextcolor : @purple;
+@pinktextcolor : @pink;
+@browntextcolor : @brown;
+
+/*--- Colored Border ---*/
+@redbordercolor : @redTextColor;
+@orangebordercolor : @orangeTextColor;
+@yellowbordercolor : @yellowTextColor;
+@olivebordercolor : @oliveTextColor;
+@greenbordercolor : @greenTextColor;
+@tealbordercolor : @tealTextColor;
+@bluebordercolor : @blueTextColor;
+@violetbordercolor : @violetTextColor;
+@purplebordercolor : @purpleTextColor;
+@pinkbordercolor : @pinkTextColor;
+@brownbordercolor : @brownTextColor;
+
+/*-------------------
+     Alpha Colors
+--------------------*/
+
+@subtletransparentblack : rgba(0, 0, 0, 0.03);
+@transparentblack : rgba(0, 0, 0, 0.05);
+@strongtransparentblack : rgba(0, 0, 0, 0.10);
+@verystrongtransparentblack : rgba(0, 0, 0, 0.15);
+
+@subtletransparentwhite : rgba(255, 255, 255, 0.02);
+@transparentwhite : rgba(255, 255, 255, 0.08);
+@strongtransparentwhite : rgba(255, 255, 255, 0.15);
+
+/*-------------------
+       Accents
+--------------------*/
+
+/* Differentiating Neutrals */
+@subtleGradient: linear-gradient(transparent, @transparentBlack);
+
+/* Differentiating Layers */
+@subtleShadow: 0px 1px 2px 0 @borderColor;
+@floatingShadow: 0px 2px 4px 0px rgba(34, 36, 38, 0.12),
+	0px 2px 10px 0px rgba(34, 36, 38, 0.15);
+
+/*******************************
+           Power-User
+*******************************/
+
+/*-------------------
+    Emotive Colors
+--------------------*/
+
+/* Positive */
+@positivecolor : @green;
+@positivebackgroundcolor : #FCFFF5;
+@positivebordercolor : #A3C293;
+@positiveheadercolor : #1A531B;
+@positivetextcolor : #2C662D;
+
+/* Negative */
+@negativecolor : @red;
+@negativebackgroundcolor : #FFF6F6;
+@negativebordercolor : #E0B4B4;
+@negativeheadercolor : #912D2B;
+@negativetextcolor : #9F3A38;
+
+/* Info */
+@infocolor : #31CCEC;
+@infobackgroundcolor : #F8FFFF;
+@infobordercolor : #A9D5DE;
+@infoheadercolor : #0E566C;
+@infotextcolor : #276F86;
+
+/* Warning */
+@warningcolor : #F2C037;
+@warningbordercolor : #C9BA9B;
+@warningbackgroundcolor : #FFFAF3;
+@warningheadercolor : #794B02;
+@warningtextcolor : #573A08;
+
+/*-------------------
+        Paths
+--------------------*/
+
+/* For source only. Modified in gulp for dist */
+@imagepath : "../../themes/default/assets/images";
+@fontpath : "../../themes/default/assets/fonts";
+
+/*-------------------
+       Em Sizes
+--------------------*/
+
+/*
+  This rounds @size values to the closest pixel then expresses that value in (r)em.
+  This ensures all size values round to exact pixels
+*/
+@mini : unit( round(@miniSize * @emSize) / @emSize, rem);
+@tiny : unit( round(@tinySize * @emSize) / @emSize, rem);
+@small : unit( round(@smallSize * @emSize) / @emSize, rem);
+@medium : unit( round(@mediumSize * @emSize) / @emSize, rem);
+@large : unit( round(@largeSize * @emSize) / @emSize, rem);
+@big : unit( round(@bigSize * @emSize) / @emSize, rem);
+@huge : unit( round(@hugeSize * @emSize) / @emSize, rem);
+@massive : unit( round(@massiveSize * @emSize) / @emSize, rem);
+
+/* em */
+@relativemini : unit( round(@miniSize * @emSize) / @emSize, em);
+@relativetiny : unit( round(@tinySize * @emSize) / @emSize, em);
+@relativesmall : unit( round(@smallSize * @emSize) / @emSize, em);
+@relativemedium : unit( round(@mediumSize * @emSize) / @emSize, em);
+@relativelarge : unit( round(@largeSize * @emSize) / @emSize, em);
+@relativebig : unit( round(@bigSize * @emSize) / @emSize, em);
+@relativehuge : unit( round(@hugeSize * @emSize) / @emSize, em);
+@relativemassive : unit( round(@massiveSize * @emSize) / @emSize, em);
+
+/* rem */
+@absolutemini : unit( round(@miniSize * @emSize) / @emSize, rem);
+@absolutetiny : unit( round(@tinySize * @emSize) / @emSize, rem);
+@absolutesmall : unit( round(@smallSize * @emSize) / @emSize, rem);
+@absolutemedium : unit( round(@mediumSize * @emSize) / @emSize, rem);
+@absolutelarge : unit( round(@largeSize * @emSize) / @emSize, rem);
+@absolutebig : unit( round(@bigSize * @emSize) / @emSize, rem);
+@absolutehuge : unit( round(@hugeSize * @emSize) / @emSize, rem);
+@absolutemassive : unit( round(@massiveSize * @emSize) / @emSize, rem);
+
+/*-------------------
+       Icons
+--------------------*/
+
+/* Maximum Glyph Width of Icon */
+@iconwidth : 1.18em;
+
+/*-------------------
+     Neutral Text
+--------------------*/
+
+@darktextcolor : rgba(0, 0, 0, 0.85);
+@mutedtextcolor : rgba(0, 0, 0, 0.6);
+@lighttextcolor : rgba(0, 0, 0, 0.4);
+
+@unselectedtextcolor : rgba(0, 0, 0, 0.4);
+@hoveredtextcolor : rgba(0, 0, 0, 0.8);
+@pressedtextcolor : rgba(0, 0, 0, 0.9);
+@selectedtextcolor : rgba(0, 0, 0, 0.95);
+@disabledtextcolor : rgba(0, 0, 0, 0.2);
+
+@invertedtextcolor : rgba(255, 255, 255, 0.9);
+@invertedmutedtextcolor : rgba(255, 255, 255, 0.8);
+@invertedlighttextcolor : rgba(255, 255, 255, 0.7);
+@invertedunselectedtextcolor : rgba(255, 255, 255, 0.5);
+@invertedhoveredtextcolor : rgba(255, 255, 255, 1);
+@invertedpressedtextcolor : rgba(255, 255, 255, 1);
+@invertedselectedtextcolor : rgba(255, 255, 255, 1);
+@inverteddisabledtextcolor : rgba(255, 255, 255, 0.2);
+
+/*-------------------
+     Brand Colors
+--------------------*/
+
+@facebookcolor : #3B5998;
+@twittercolor : #55ACEE;
+@googlepluscolor : #DD4B39;
+@linkedincolor : #1F88BE;
+@youtubecolor : #CC181E;
+@pinterestcolor : #BD081C;
+@vkcolor : #4D7198;
+@instagramcolor : #49769C;
+
+/*-------------------
+      Borders
+--------------------*/
+
+@circularradius : 500rem;
+
+@bordercolor : rgba(34, 36, 38, 0.15);
+@strongbordercolor : rgba(34, 36, 38, 0.22);
+@internalbordercolor : rgba(34, 36, 38, 0.1);
+@selectedbordercolor : rgba(34, 36, 38, 0.35);
+@strongselectedbordercolor : rgba(34, 36, 38, 0.5);
+@disabledbordercolor : rgba(34, 36, 38, 0.5);
+
+@solidinternalbordercolor : #FAFAFA;
+@solidbordercolor : #D4D4D5;
+@solidselectedbordercolor : #BCBDBD;
+
+@whitebordercolor : rgba(255, 255, 255, 0.1);
+@selectedwhitebordercolor : rgba(255, 255, 255, 0.8);
+
+@solidwhitebordercolor : #555555;
+@selectedsolidwhitebordercolor : #999999;
+
+/*-------------------
+    Derived Values
+--------------------*/
+
+/* Loaders Position Offset */
+@loaderoffset : -(@loaderSize / 2);
+@loadermargin : @loaderOffset 0em 0em @loaderOffset;
+
+/* Rendered Scrollbar Width */
+@scrollbarWidth: 17px;
+
+/* Maximum Single Character Glyph Width, aka Capital "W" */
+@glyphWidth: 1.1em;
+
+/* Used to match floats with text */
+@lineheightoffset : ((@lineHeight - 1em) / 2);
+@headerlineheightoffset : (@headerLineHeight - 1em) / 2;
+
+/* Header Spacing */
+@headertopmargin : ~"calc(2rem - "@headerLineHeightOffset~") ";
+@headerbottommargin : 1rem;
+@headermargin : @headerTopMargin 0em @headerBottomMargin;
+
+/* Minimum Mobile Width */
+@pageminwidth : 320px;
+
+/* Positive / Negative Dupes */
+@successbackgroundcolor : @positiveBackgroundColor;
+@successcolor : @positiveColor;
+@successbordercolor : @positiveBorderColor;
+@successheadercolor : @positiveHeaderColor;
+@successtextcolor : @positiveTextColor;
+
+@errorbackgroundcolor : @negativeBackgroundColor;
+@errorcolor : @negativeColor;
+@errorbordercolor : @negativeBorderColor;
+@errorheadercolor : @negativeHeaderColor;
+@errortextcolor : @negativeTextColor;
+
+/* Responsive */
+@largestmobilescreen : (@tabletBreakpoint - 1px);
+@largesttabletscreen : (@computerBreakpoint - 1px);
+@largestsmallmonitor : (@largeMonitorBreakpoint - 1px);
+@largestlargemonitor : (@widescreenMonitorBreakpoint - 1px);
+
+/*-------------------
+  Exact Pixel Values
+--------------------*/
+/*
+  These are used to specify exact pixel values in em
+  for things like borders that remain constantly
+  sized as emSize adjusts
+
+  Since there are many more sizes than names for sizes,
+  these are named by their original pixel values.
+
+*/
+
+@1px : unit( (1 / @emSize), rem);
+@2px : unit( (2 / @emSize), rem);
+@3px : unit( (3 / @emSize), rem);
+@4px : unit( (4 / @emSize), rem);
+@5px : unit( (5 / @emSize), rem);
+@6px : unit( (6 / @emSize), rem);
+@7px : unit( (7 / @emSize), rem);
+@8px : unit( (8 / @emSize), rem);
+@9px : unit( (9 / @emSize), rem);
+@10px : unit( (10 / @emSize), rem);
+@11px : unit( (11 / @emSize), rem);
+@12px : unit( (12 / @emSize), rem);
+@13px : unit( (13 / @emSize), rem);
+@14px : unit( (14 / @emSize), rem);
+@15px : unit( (15 / @emSize), rem);
+@16px : unit( (16 / @emSize), rem);
+@17px : unit( (17 / @emSize), rem);
+@18px : unit( (18 / @emSize), rem);
+@19px : unit( (19 / @emSize), rem);
+@20px : unit( (20 / @emSize), rem);
+@21px : unit( (21 / @emSize), rem);
+@22px : unit( (22 / @emSize), rem);
+@23px : unit( (23 / @emSize), rem);
+@24px : unit( (24 / @emSize), rem);
+@25px : unit( (25 / @emSize), rem);
+@26px : unit( (26 / @emSize), rem);
+@27px : unit( (27 / @emSize), rem);
+@28px : unit( (28 / @emSize), rem);
+@29px : unit( (29 / @emSize), rem);
+@30px : unit( (30 / @emSize), rem);
+@31px : unit( (31 / @emSize), rem);
+@32px : unit( (32 / @emSize), rem);
+@33px : unit( (33 / @emSize), rem);
+@34px : unit( (34 / @emSize), rem);
+@35px : unit( (35 / @emSize), rem);
+@36px : unit( (36 / @emSize), rem);
+@37px : unit( (37 / @emSize), rem);
+@38px : unit( (38 / @emSize), rem);
+@39px : unit( (39 / @emSize), rem);
+@40px : unit( (40 / @emSize), rem);
+@41px : unit( (41 / @emSize), rem);
+@42px : unit( (42 / @emSize), rem);
+@43px : unit( (43 / @emSize), rem);
+@44px : unit( (44 / @emSize), rem);
+@45px : unit( (45 / @emSize), rem);
+@46px : unit( (46 / @emSize), rem);
+@47px : unit( (47 / @emSize), rem);
+@48px : unit( (48 / @emSize), rem);
+@49px : unit( (49 / @emSize), rem);
+@50px : unit( (50 / @emSize), rem);
+@51px : unit( (51 / @emSize), rem);
+@52px : unit( (52 / @emSize), rem);
+@53px : unit( (53 / @emSize), rem);
+@54px : unit( (54 / @emSize), rem);
+@55px : unit( (55 / @emSize), rem);
+@56px : unit( (56 / @emSize), rem);
+@57px : unit( (57 / @emSize), rem);
+@58px : unit( (58 / @emSize), rem);
+@59px : unit( (59 / @emSize), rem);
+@60px : unit( (60 / @emSize), rem);
+@61px : unit( (61 / @emSize), rem);
+@62px : unit( (62 / @emSize), rem);
+@63px : unit( (63 / @emSize), rem);
+@64px : unit( (64 / @emSize), rem);
+
+@relative1px : unit( (1 / @emSize), em);
+@relative2px : unit( (2 / @emSize), em);
+@relative3px : unit( (3 / @emSize), em);
+@relative4px : unit( (4 / @emSize), em);
+@relative5px : unit( (5 / @emSize), em);
+@relative6px : unit( (6 / @emSize), em);
+@relative7px : unit( (7 / @emSize), em);
+@relative8px : unit( (8 / @emSize), em);
+@relative9px : unit( (9 / @emSize), em);
+@relative10px : unit( (10 / @emSize), em);
+@relative11px : unit( (11 / @emSize), em);
+@relative12px : unit( (12 / @emSize), em);
+@relative13px : unit( (13 / @emSize), em);
+@relative14px : unit( (14 / @emSize), em);
+@relative15px : unit( (15 / @emSize), em);
+@relative16px : unit( (16 / @emSize), em);
+@relative17px : unit( (17 / @emSize), em);
+@relative18px : unit( (18 / @emSize), em);
+@relative19px : unit( (19 / @emSize), em);
+@relative20px : unit( (20 / @emSize), em);
+@relative21px : unit( (21 / @emSize), em);
+@relative22px : unit( (22 / @emSize), em);
+@relative23px : unit( (23 / @emSize), em);
+@relative24px : unit( (24 / @emSize), em);
+@relative25px : unit( (25 / @emSize), em);
+@relative26px : unit( (26 / @emSize), em);
+@relative27px : unit( (27 / @emSize), em);
+@relative28px : unit( (28 / @emSize), em);
+@relative29px : unit( (29 / @emSize), em);
+@relative30px : unit( (30 / @emSize), em);
+@relative31px : unit( (31 / @emSize), em);
+@relative32px : unit( (32 / @emSize), em);
+@relative33px : unit( (33 / @emSize), em);
+@relative34px : unit( (34 / @emSize), em);
+@relative35px : unit( (35 / @emSize), em);
+@relative36px : unit( (36 / @emSize), em);
+@relative37px : unit( (37 / @emSize), em);
+@relative38px : unit( (38 / @emSize), em);
+@relative39px : unit( (39 / @emSize), em);
+@relative40px : unit( (40 / @emSize), em);
+@relative41px : unit( (41 / @emSize), em);
+@relative42px : unit( (42 / @emSize), em);
+@relative43px : unit( (43 / @emSize), em);
+@relative44px : unit( (44 / @emSize), em);
+@relative45px : unit( (45 / @emSize), em);
+@relative46px : unit( (46 / @emSize), em);
+@relative47px : unit( (47 / @emSize), em);
+@relative48px : unit( (48 / @emSize), em);
+@relative49px : unit( (49 / @emSize), em);
+@relative50px : unit( (50 / @emSize), em);
+@relative51px : unit( (51 / @emSize), em);
+@relative52px : unit( (52 / @emSize), em);
+@relative53px : unit( (53 / @emSize), em);
+@relative54px : unit( (54 / @emSize), em);
+@relative55px : unit( (55 / @emSize), em);
+@relative56px : unit( (56 / @emSize), em);
+@relative57px : unit( (57 / @emSize), em);
+@relative58px : unit( (58 / @emSize), em);
+@relative59px : unit( (59 / @emSize), em);
+@relative60px : unit( (60 / @emSize), em);
+@relative61px : unit( (61 / @emSize), em);
+@relative62px : unit( (62 / @emSize), em);
+@relative63px : unit( (63 / @emSize), em);
+@relative64px : unit( (64 / @emSize), em);
+
+/* Columns */
+@onewide : (1 / @columnCount * 100%);
+@twowide : (2 / @columnCount * 100%);
+@threewide : (3 / @columnCount * 100%);
+@fourwide : (4 / @columnCount * 100%);
+@fivewide : (5 / @columnCount * 100%);
+@sixwide : (6 / @columnCount * 100%);
+@sevenwide : (7 / @columnCount * 100%);
+@eightwide : (8 / @columnCount * 100%);
+@ninewide : (9 / @columnCount * 100%);
+@tenwide : (10 / @columnCount * 100%);
+@elevenwide : (11 / @columnCount * 100%);
+@twelvewide : (12 / @columnCount * 100%);
+@thirteenwide : (13 / @columnCount * 100%);
+@fourteenwide : (14 / @columnCount * 100%);
+@fifteenwide : (15 / @columnCount * 100%);
+@sixteenwide : (16 / @columnCount * 100%);
+
+@onecolumn : (1 / 1 * 100%);
+@twocolumn : (1 / 2 * 100%);
+@threecolumn : (1 / 3 * 100%);
+@fourcolumn : (1 / 4 * 100%);
+@fivecolumn : (1 / 5 * 100%);
+@sixcolumn : (1 / 6 * 100%);
+@sevencolumn : (1 / 7 * 100%);
+@eightcolumn : (1 / 8 * 100%);
+@ninecolumn : (1 / 9 * 100%);
+@tencolumn : (1 / 10 * 100%);
+@elevencolumn : (1 / 11 * 100%);
+@twelvecolumn : (1 / 12 * 100%);
+@thirteencolumn : (1 / 13 * 100%);
+@fourteencolumn : (1 / 14 * 100%);
+@fifteencolumn : (1 / 15 * 100%);
+@sixteencolumn : (1 / 16 * 100%);
+
+/*******************************
+             States
+*******************************/
+
+/*-------------------
+      Disabled
+--------------------*/
+
+@disabledOpacity: 0.45;
+@disabledTextColor: rgba(40, 40, 40, 0.3);
+@invertedDisabledTextColor: rgba(225, 225, 225, 0.3);
+
+/*-------------------
+        Hover
+--------------------*/
+
+/*---  Shadows  ---*/
+@floatingShadowHover: 0px 2px 4px 0px rgba(34, 36, 38, 0.15),
+	0px 2px 10px 0px rgba(34, 36, 38, 0.25);
+
+/*---  Colors  ---*/
+@primarycolorhover : saturate(darken(@primaryColor, 5), 10, relative);
+@secondarycolorhover : saturate(lighten(@secondaryColor, 5), 10, relative);
+
+@redhover : saturate(darken(@red, 5), 10, relative);
+@orangehover : saturate(darken(@orange, 5), 10, relative);
+@yellowhover : saturate(darken(@yellow, 5), 10, relative);
+@olivehover : saturate(darken(@olive, 5), 10, relative);
+@greenhover : saturate(darken(@green, 5), 10, relative);
+@tealhover : saturate(darken(@teal, 5), 10, relative);
+@bluehover : saturate(darken(@blue, 5), 10, relative);
+@violethover : saturate(darken(@violet, 5), 10, relative);
+@purplehover : saturate(darken(@purple, 5), 10, relative);
+@pinkhover : saturate(darken(@pink, 5), 10, relative);
+@brownhover : saturate(darken(@brown, 5), 10, relative);
+
+@lightredhover : saturate(darken(@lightRed, 5), 10, relative);
+@lightorangehover : saturate(darken(@lightOrange, 5), 10, relative);
+@lightyellowhover : saturate(darken(@lightYellow, 5), 10, relative);
+@lightolivehover : saturate(darken(@lightOlive, 5), 10, relative);
+@lightgreenhover : saturate(darken(@lightGreen, 5), 10, relative);
+@lighttealhover : saturate(darken(@lightTeal, 5), 10, relative);
+@lightbluehover : saturate(darken(@lightBlue, 5), 10, relative);
+@lightviolethover : saturate(darken(@lightViolet, 5), 10, relative);
+@lightpurplehover : saturate(darken(@lightPurple, 5), 10, relative);
+@lightpinkhover : saturate(darken(@lightPink, 5), 10, relative);
+@lightbrownhover : saturate(darken(@lightBrown, 5), 10, relative);
+@lightgreyhover : saturate(darken(@lightGrey, 5), 10, relative);
+@lightblackhover : saturate(darken(@fullBlack, 5), 10, relative);
+
+/*---  Emotive  ---*/
+@positivecolorhover : saturate(darken(@positiveColor, 5), 10, relative);
+@negativecolorhover : saturate(darken(@negativeColor, 5), 10, relative);
+
+/*---  Brand   ---*/
+@facebookhovercolor : saturate(darken(@facebookColor, 5), 10, relative);
+@twitterhovercolor : saturate(darken(@twitterColor, 5), 10, relative);
+@googleplushovercolor : saturate(darken(@googlePlusColor, 5), 10, relative);
+@linkedinhovercolor : saturate(darken(@linkedInColor, 5), 10, relative);
+@youtubehovercolor : saturate(darken(@youtubeColor, 5), 10, relative);
+@instagramhovercolor : saturate(darken(@instagramColor, 5), 10, relative);
+@pinteresthovercolor : saturate(darken(@pinterestColor, 5), 10, relative);
+@vkhovercolor : saturate(darken(@vkColor, 5), 10, relative);
+
+/*---  Dark Tones  ---*/
+@fullblackhover : lighten(@fullBlack, 5);
+@blackhover : lighten(@black, 5);
+@greyhover : lighten(@grey, 5);
+
+/*---  Light Tones  ---*/
+@whitehover : darken(@white, 5);
+@offwhitehover : darken(@offWhite, 5);
+@darkwhitehover : darken(@darkWhite, 5);
+
+/*-------------------
+        Focus
+--------------------*/
+
+/*---  Colors  ---*/
+@primarycolorfocus : saturate(darken(@primaryColor, 8), 20, relative);
+@secondarycolorfocus : saturate(lighten(@secondaryColor, 8), 20, relative);
+
+@redfocus : saturate(darken(@red, 8), 20, relative);
+@orangefocus : saturate(darken(@orange, 8), 20, relative);
+@yellowfocus : saturate(darken(@yellow, 8), 20, relative);
+@olivefocus : saturate(darken(@olive, 8), 20, relative);
+@greenfocus : saturate(darken(@green, 8), 20, relative);
+@tealfocus : saturate(darken(@teal, 8), 20, relative);
+@bluefocus : saturate(darken(@blue, 8), 20, relative);
+@violetfocus : saturate(darken(@violet, 8), 20, relative);
+@purplefocus : saturate(darken(@purple, 8), 20, relative);
+@pinkfocus : saturate(darken(@pink, 8), 20, relative);
+@brownfocus : saturate(darken(@brown, 8), 20, relative);
+
+@lightredfocus : saturate(darken(@lightRed, 8), 20, relative);
+@lightorangefocus : saturate(darken(@lightOrange, 8), 20, relative);
+@lightyellowfocus : saturate(darken(@lightYellow, 8), 20, relative);
+@lightolivefocus : saturate(darken(@lightOlive, 8), 20, relative);
+@lightgreenfocus : saturate(darken(@lightGreen, 8), 20, relative);
+@lighttealfocus : saturate(darken(@lightTeal, 8), 20, relative);
+@lightbluefocus : saturate(darken(@lightBlue, 8), 20, relative);
+@lightvioletfocus : saturate(darken(@lightViolet, 8), 20, relative);
+@lightpurplefocus : saturate(darken(@lightPurple, 8), 20, relative);
+@lightpinkfocus : saturate(darken(@lightPink, 8), 20, relative);
+@lightbrownfocus : saturate(darken(@lightBrown, 8), 20, relative);
+@lightgreyfocus : saturate(darken(@lightGrey, 8), 20, relative);
+@lightblackfocus : saturate(darken(@fullBlack, 8), 20, relative);
+
+/*---  Emotive  ---*/
+@positivecolorfocus : saturate(darken(@positiveColor, 8), 20, relative);
+@negativecolorfocus : saturate(darken(@negativeColor, 8), 20, relative);
+
+/*---  Brand   ---*/
+@facebookfocuscolor : saturate(darken(@facebookColor, 8), 20, relative);
+@twitterfocuscolor : saturate(darken(@twitterColor, 8), 20, relative);
+@googleplusfocuscolor : saturate(darken(@googlePlusColor, 8), 20, relative);
+@linkedinfocuscolor : saturate(darken(@linkedInColor, 8), 20, relative);
+@youtubefocuscolor : saturate(darken(@youtubeColor, 8), 20, relative);
+@instagramfocuscolor : saturate(darken(@instagramColor, 8), 20, relative);
+@pinterestfocuscolor : saturate(darken(@pinterestColor, 8), 20, relative);
+@vkfocuscolor : saturate(darken(@vkColor, 8), 20, relative);
+
+/*---  Dark Tones  ---*/
+@fullblackfocus : lighten(@fullBlack, 8);
+@blackfocus : lighten(@black, 8);
+@greyfocus : lighten(@grey, 8);
+
+/*---  Light Tones  ---*/
+@whitefocus : darken(@white, 8);
+@offwhitefocus : darken(@offWhite, 8);
+@darkwhitefocus : darken(@darkWhite, 8);
+
+/*-------------------
+    Down (:active)
+--------------------*/
+
+/*---  Colors  ---*/
+@primarycolordown : darken(@primaryColor, 10);
+@secondarycolordown : lighten(@secondaryColor, 10);
+
+@reddown : darken(@red, 10);
+@orangedown : darken(@orange, 10);
+@yellowdown : darken(@yellow, 10);
+@olivedown : darken(@olive, 10);
+@greendown : darken(@green, 10);
+@tealdown : darken(@teal, 10);
+@bluedown : darken(@blue, 10);
+@violetdown : darken(@violet, 10);
+@purpledown : darken(@purple, 10);
+@pinkdown : darken(@pink, 10);
+@browndown : darken(@brown, 10);
+
+@lightreddown : darken(@lightRed, 10);
+@lightorangedown : darken(@lightOrange, 10);
+@lightyellowdown : darken(@lightYellow, 10);
+@lightolivedown : darken(@lightOlive, 10);
+@lightgreendown : darken(@lightGreen, 10);
+@lighttealdown : darken(@lightTeal, 10);
+@lightbluedown : darken(@lightBlue, 10);
+@lightvioletdown : darken(@lightViolet, 10);
+@lightpurpledown : darken(@lightPurple, 10);
+@lightpinkdown : darken(@lightPink, 10);
+@lightbrowndown : darken(@lightBrown, 10);
+@lightgreydown : darken(@lightGrey, 10);
+@lightblackdown : darken(@fullBlack, 10);
+
+/*---  Emotive  ---*/
+@positivecolordown : darken(@positiveColor, 10);
+@negativecolordown : darken(@negativeColor, 10);
+
+/*---  Brand   ---*/
+@facebookdowncolor : darken(@facebookColor, 10);
+@twitterdowncolor : darken(@twitterColor, 10);
+@googleplusdowncolor : darken(@googlePlusColor, 10);
+@linkedindowncolor : darken(@linkedInColor, 10);
+@youtubedowncolor : darken(@youtubeColor, 10);
+@instagramdowncolor : darken(@instagramColor, 10);
+@pinterestdowncolor : darken(@pinterestColor, 10);
+@vkdowncolor : darken(@vkColor, 10);
+
+/*---  Dark Tones  ---*/
+@fullblackdown : lighten(@fullBlack, 10);
+@blackdown : lighten(@black, 10);
+@greydown : lighten(@grey, 10);
+
+/*---  Light Tones  ---*/
+@whitedown : darken(@white, 10);
+@offwhitedown : darken(@offWhite, 10);
+@darkwhitedown : darken(@darkWhite, 10);
+
+/*-------------------
+        Active
+--------------------*/
+
+/*---  Colors  ---*/
+@primarycoloractive : saturate(darken(@primaryColor, 5), 15, relative);
+@secondarycoloractive : saturate(lighten(@secondaryColor, 5), 15, relative);
+
+@redactive : saturate(darken(@red, 5), 15, relative);
+@orangeactive : saturate(darken(@orange, 5), 15, relative);
+@yellowactive : saturate(darken(@yellow, 5), 15, relative);
+@oliveactive : saturate(darken(@olive, 5), 15, relative);
+@greenactive : saturate(darken(@green, 5), 15, relative);
+@tealactive : saturate(darken(@teal, 5), 15, relative);
+@blueactive : saturate(darken(@blue, 5), 15, relative);
+@violetactive : saturate(darken(@violet, 5), 15, relative);
+@purpleactive : saturate(darken(@purple, 5), 15, relative);
+@pinkactive : saturate(darken(@pink, 5), 15, relative);
+@brownactive : saturate(darken(@brown, 5), 15, relative);
+
+@lightredactive : saturate(darken(@lightRed, 5), 15, relative);
+@lightorangeactive : saturate(darken(@lightOrange, 5), 15, relative);
+@lightyellowactive : saturate(darken(@lightYellow, 5), 15, relative);
+@lightoliveactive : saturate(darken(@lightOlive, 5), 15, relative);
+@lightgreenactive : saturate(darken(@lightGreen, 5), 15, relative);
+@lighttealactive : saturate(darken(@lightTeal, 5), 15, relative);
+@lightblueactive : saturate(darken(@lightBlue, 5), 15, relative);
+@lightvioletactive : saturate(darken(@lightViolet, 5), 15, relative);
+@lightpurpleactive : saturate(darken(@lightPurple, 5), 15, relative);
+@lightpinkactive : saturate(darken(@lightPink, 5), 15, relative);
+@lightbrownactive : saturate(darken(@lightBrown, 5), 15, relative);
+@lightgreyactive : saturate(darken(@lightGrey, 5), 15, relative);
+@lightblackactive : saturate(darken(@fullBlack, 5), 15, relative);
+
+/*---  Emotive  ---*/
+@positivecoloractive : saturate(darken(@positiveColor, 5), 15, relative);
+@negativecoloractive : saturate(darken(@negativeColor, 5), 15, relative);
+
+/*---  Brand   ---*/
+@facebookactivecolor : saturate(darken(@facebookColor, 5), 15, relative);
+@twitteractivecolor : saturate(darken(@twitterColor, 5), 15, relative);
+@googleplusactivecolor : saturate(darken(@googlePlusColor, 5), 15, relative);
+@linkedinactivecolor : saturate(darken(@linkedInColor, 5), 15, relative);
+@youtubeactivecolor : saturate(darken(@youtubeColor, 5), 15, relative);
+@instagramactivecolor : saturate(darken(@instagramColor, 5), 15, relative);
+@pinterestactivecolor : saturate(darken(@pinterestColor, 5), 15, relative);
+@vkactivecolor : saturate(darken(@vkColor, 5), 15, relative);
+
+/*---  Dark Tones  ---*/
+@fullblackactive : darken(@fullBlack, 5);
+@blackactive : darken(@black, 5);
+@greyactive : darken(@grey, 5);
+
+/*---  Light Tones  ---*/
+@whiteactive : darken(@white, 5);
+@offwhiteactive : darken(@offWhite, 5);
+@darkwhiteactive : darken(@darkWhite, 5);
