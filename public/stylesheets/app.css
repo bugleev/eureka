@@ -87,6 +87,9 @@ h4.mini.message,
 #blog__author {
 	visibility: hidden;
 }
+#blogs-header{
+	visibility: initial;
+}
 .ui.button.landing_btn:first-of-type {
 	padding-left: 4.5em;
 	padding-right: 4.5em;
