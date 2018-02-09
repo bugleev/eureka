@@ -1,7 +1,7 @@
 <div align="center">
 <h1>Eureka Blogs</h1>
   <a href="https://eureka.bugleev.com/">
-    <img width="200" heigth="200" src="https://github.com/bugleev/eureka/blob/master/public/img/eureka.JPG">
+    <img width="300" heigth="300" src="https://github.com/bugleev/eureka/blob/master/public/img/eureka.JPG">
   </a>
   <br>
   <br>
