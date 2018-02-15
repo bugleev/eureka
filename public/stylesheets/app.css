@@ -90,6 +90,9 @@ h4.mini.message,
 #blogs-header{
 	visibility: initial;
 }
+#blogpost__body{
+	margin-bottom: 2rem;
+}
 .ui.button.landing_btn:first-of-type {
 	padding-left: 4.5em;
 	padding-right: 4.5em;

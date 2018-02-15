@@ -30,7 +30,7 @@
             <%= postDate %>
           </h5>
       </div>
-      <div class="ui container justified">
+      <div class="ui container justified" id="blogpost__body">
         <%-blog.body%>
       </div>
       <% if(currentUser && blog.author.id.equals(currentUser._id)) { %>
