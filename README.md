@@ -10,7 +10,7 @@
   </p>
 </div>
 
-<h2 align="center">Overview</h2>
+<h2>Overview</h2>
 This is a blog platform-type app, made in Node js for demonstration purposes.
 
 ## Stack
